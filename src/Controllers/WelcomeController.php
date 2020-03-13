@@ -3,6 +3,7 @@
 namespace RachidLaasri\LaravelInstaller\Controllers;
 
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Config;
 
 class WelcomeController extends Controller
 {
@@ -13,6 +14,7 @@ class WelcomeController extends Controller
      */
     public function welcome()
     {
-        return view('vendor.installer.welcome');
+        $version= Config::get('version');
+        return view('vendor.installer.welcome',compact('version'));
     }
 }
