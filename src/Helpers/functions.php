@@ -20,4 +20,5 @@ if (! function_exists('isActive')) {
             return $className;
         }
     }
+
 }

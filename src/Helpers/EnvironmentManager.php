@@ -5,6 +5,7 @@ namespace RachidLaasri\LaravelInstaller\Helpers;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class EnvironmentManager
 {
@@ -12,6 +13,7 @@ class EnvironmentManager
      * @var string
      */
     private $envPath;
+    private $configPath;
 
     /**
      * @var string
@@ -24,6 +26,7 @@ class EnvironmentManager
     public function __construct()
     {
         $this->envPath = base_path('.env');
+        $this->configPath = base_path('config' . DIRECTORY_SEPARATOR . 'standard.php');
         $this->envExamplePath = base_path('.env.example');
     }
 
@@ -44,6 +47,7 @@ class EnvironmentManager
 
         return file_get_contents($this->envPath);
     }
+
 
     /**
      * Get the the .env file path.
@@ -98,11 +102,11 @@ class EnvironmentManager
         $envFileData =
             'APP_NAME=\'' . $request->app_name . "'\n" .
             'APP_ENV=' . $request->environment . "\n" .
-            'APP_KEY=' . 'base64:' . base64_encode(str_random(32)) . "\n" .
+            'APP_KEY=' . 'base64:' . base64_encode(Str::random(32)) . "\n" .
             'APP_DEBUG=' . $request->app_debug . "\n" .
             'APP_LOG_LEVEL=' . $request->app_log_level . "\n" .
             'APP_URL=' . $request->app_url . "\n" .
-            'APP_MASTER=' . rand(9999,999999). "\n\n" .
+            'APP_MASTER=' . rand(9999, 999999) . "\n\n" .
             'DB_CONNECTION=' . $request->database_connection . "\n" .
             'DB_HOST=' . $request->database_hostname . "\n" .
             'DB_PORT=' . $request->database_port . "\n" .
@@ -124,20 +128,23 @@ class EnvironmentManager
             'MAIL_ENCRYPTION=' . $request->mail_encryption . "\n\n" .
             'PUSHER_APP_ID=' . $request->pusher_app_id . "\n" .
             'PUSHER_APP_KEY=' . $request->pusher_app_key . "\n" .
-            'PUSHER_APP_SECRET=' . $request->pusher_app_secret . "\n" .
-            'TWILLIO_SID=' .''. "\n" .
+            'PUSHER_APP_SECRET=' . $request->pusher_app_secret . "\n\n" .
+            'TWILLIO_SID=' . '' . "\n" .
             'TWILLIO_PASSWORD=' . '' . "\n" .
-            'TWILLIO_TOKEN=' . '' . "\n" .
-            'STRIPE_SITEKEY=' .'' . "\n" .
-            'STRIPE_SECRET=' . '' . "\n" .
+            'TWILLIO_TOKEN=' . '' . "\n\n" .
+             'STRIPE_CURRENCY=' . '' . "\n" .
+            'STRIPE_SITEKEY=' . '' . "\n" .
+            'STRIPE_SECRET=' . '' . "\n\n" .
+            'CAPTCHA_SECURITY=' . '' . "\n" .
             'NOCAPTCHA_SECRET=' . '' . "\n" .
-            'NOCAPTCHA_SITEKEY=' . '' . "\n" ;
+            'NOCAPTCHA_SITEKEY=' . '' . "\n";
 
         try {
             file_put_contents($this->envPath, $envFileData);
         } catch (Exception $e) {
             $results = trans('installer_messages.environment.errors');
         }
+
 
         $results = trans('installer_messages.environment.errors');
         return $results;

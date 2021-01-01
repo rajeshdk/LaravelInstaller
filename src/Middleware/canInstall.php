@@ -16,7 +16,9 @@ class canInstall
      */
     public function handle($request, Closure $next)
     {
+
         if ($this->alreadyInstalled()) {
+
             $installedRedirect = config('installer.installedAlreadyAction');
 
             switch ($installedRedirect) {
@@ -44,6 +46,7 @@ class canInstall
                     break;
             }
         }
+
 
         return $next($request);
     }

@@ -2,12 +2,12 @@
 
 return [
 
-    /*
+    /**
      *
      * Shared translations.
      *
      */
-    'title' => 'Laravel Installer',
+    'title' => 'Rose Billing - Complete Business Solution with CRM ',
     'next' => 'Next Step',
     'back' => 'Previous',
     'finish' => 'Install',
@@ -15,19 +15,19 @@ return [
         'errorTitle' => 'The Following errors occurred:',
     ],
 
-    /*
+    /**
      *
      * Home page translations.
      *
      */
     'welcome' => [
         'templateTitle' => 'Welcome',
-        'title'   => 'Laravel Installer',
+        'title' => 'Rose Billing - Complete Business Solution with CRM',
         'message' => 'Easy Installation and Setup Wizard.',
-        'next'    => 'Check Requirements',
+        'next' => 'I agree to the License ',
     ],
 
-    /*
+    /**
      *
      * Requirements page translations.
      *
@@ -35,10 +35,10 @@ return [
     'requirements' => [
         'templateTitle' => 'Step 1 | Server Requirements',
         'title' => 'Server Requirements',
-        'next'    => 'Check Permissions',
+        'next' => 'Check Permissions',
     ],
 
-    /*
+    /**
      *
      * Permissions page translations.
      *
@@ -49,7 +49,7 @@ return [
         'next' => 'Configure Environment',
     ],
 
-    /*
+    /**
      *
      * Environment page translations.
      *
@@ -58,17 +58,18 @@ return [
         'menu' => [
             'templateTitle' => 'Step 3 | Environment Settings',
             'title' => 'Environment Settings',
-            'desc' => 'Please select how you want to configure the apps <code>.env</code> file.',
-            'wizard-button' => 'Form Wizard Setup',
+            'desc' => 'Please select how you want to configure the app in your<code>.env</code> file.',
+            'wizard-button' => 'Start Setup',
             'classic-button' => 'Classic Text Editor',
         ],
         'wizard' => [
             'templateTitle' => 'Step 3 | Environment Settings | Guided Wizard',
-            'title' => 'Guided <code>.env</code> Wizard',
+            'title' => 'Guided Installation Wizard',
             'tabs' => [
                 'environment' => 'Environment',
                 'database' => 'Database',
                 'application' => 'Application',
+                'account' => 'Account'
             ],
             'form' => [
                 'name_required' => 'An environment name is required.',
@@ -95,7 +96,6 @@ return [
                 'app_log_level_label_emergency' => 'emergency',
                 'app_url_label' => 'App Url',
                 'app_url_placeholder' => 'App Url',
-                'db_connection_failed' => 'Could not connect to the database.',
                 'db_connection_label' => 'Database Connection',
                 'db_connection_label_mysql' => 'mysql',
                 'db_connection_label_sqlite' => 'sqlite',
@@ -111,10 +111,17 @@ return [
                 'db_username_placeholder' => 'Database User Name',
                 'db_password_label' => 'Database Password',
                 'db_password_placeholder' => 'Database Password',
+                'db_connection_failed' => 'DB Connection Failed - Please verify your database host, username, password',
+                 'db_communication_failed' => 'Communication Failed - Please verify your curl setting and internet access',
+                'verification_failed' => 'Purchase Code Verification failed!',
+                'super_admin_email_required' => 'Email Required ',
+                'super_admin_email' => 'Email ',
+                'super_admin_password' => 'Password ',
+                'purchase_code' => 'Purchase code ',
 
                 'app_tabs' => [
                     'more_info' => 'More Info',
-                    'broadcasting_title' => 'Broadcasting, Caching, Session, &amp; Queue',
+                    'broadcasting_title' => 'Broadcasting, Caching, Session, & Queue',
                     'broadcasting_label' => 'Broadcast Driver',
                     'broadcasting_placeholder' => 'Broadcast Driver',
                     'cache_label' => 'Cache Driver',
@@ -128,7 +135,7 @@ return [
                     'redis_password' => 'Redis Password',
                     'redis_port' => 'Redis Port',
 
-                    'mail_label' => 'Mail',
+                    'mail_label' => 'Mail Setup',
                     'mail_driver_label' => 'Mail Driver',
                     'mail_driver_placeholder' => 'Mail Driver',
                     'mail_host_label' => 'Mail Host',
@@ -152,6 +159,7 @@ return [
                 ],
                 'buttons' => [
                     'setup_database' => 'Setup Database',
+                    'setup_account' => 'Setup Account',
                     'setup_application' => 'Setup Application',
                     'install' => 'Install',
                 ],
@@ -170,7 +178,7 @@ return [
 
     'install' => 'Install',
 
-    /*
+    /**
      *
      * Installed Log translations.
      *
@@ -179,7 +187,7 @@ return [
         'success_log_message' => 'Laravel Installer successfully INSTALLED on ',
     ],
 
-    /*
+    /**
      *
      * Final page translations.
      *
@@ -195,41 +203,41 @@ return [
         'exit' => 'Click here to exit',
     ],
 
-    /*
+    /**
      *
      * Update specific translations
      *
      */
     'updater' => [
-        /*
+        /**
          *
          * Shared translations.
          *
          */
         'title' => 'Laravel Updater',
 
-        /*
+        /**
          *
          * Welcome page translations for update feature.
          *
          */
         'welcome' => [
-            'title'   => 'Welcome To The Updater',
+            'title' => 'Welcome To The Updater',
             'message' => 'Welcome to the update wizard.',
         ],
 
-        /*
+        /**
          *
          * Welcome page translations for update feature.
          *
          */
         'overview' => [
-            'title'   => 'Overview',
+            'title' => 'Overview',
             'message' => 'There is 1 update.|There are :number updates.',
-            'install_updates' => 'Install Updates',
+            'install_updates' => "Install Updates"
         ],
 
-        /*
+        /**
          *
          * Final page translations.
          *
@@ -241,7 +249,7 @@ return [
         ],
 
         'log' => [
-            'success_message' => 'Laravel Installer successfully UPDATED on ',
+            'success_message' => 'Rose Billing successfully UPDATED on ',
         ],
     ],
 ];
